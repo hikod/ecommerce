@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
   })
   .then((tag) => {
     console.log('Creating a new tag');
-    resstatus(201).json(tag);
+    res.status(201).json(tag);
   })
   .catch((err) => {res.status(500).json(err);
   })
