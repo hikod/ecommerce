@@ -7,7 +7,9 @@ router.get('/', (req, res) => {
   // find all categories
   // be sure to include its associated Products
   Category.findAll({
-    include: [Product]
+    include: {
+      model: Product
+    }
   })
     .then((categories) => {
       console.log('Getting the all categories');
@@ -23,9 +25,11 @@ router.get('/:id', (req, res) => {
   // be sure to include its associated Products
   Category.findOne({
     where: {
-      id: res.params.id
+      id: req.params.id
     },
-    include: [Product]
+    include: {
+      model: Product
+    }
   })
   .then((category) => {
     console.log('Getting the category');
@@ -62,7 +66,7 @@ router.put('/:id', (req, res) => {
     res.status(204).json(category);
   })
   .catch((err) => {
-    res.status(500).json(err);
+    res.status(500).json(err); 
   })
 });
 
