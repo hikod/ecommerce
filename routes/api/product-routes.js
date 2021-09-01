@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
   })
     .then((products) => {
       console.log('Getting the all products');
-      res.json(products); 
+      res.status(200).json(products); 
     })
     .catch((err) => { 
       res.status(500).json(err); 
@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
   })
   .then((product) => {
     console.log('Getting the Product');
-    res.json(product);
+    res.status(200).json(product);
   })
   .catch((err) => {
     res.status(500).json(err);
@@ -121,7 +121,8 @@ router.delete('/:id', (req, res) => {
   })
   .then((product) => {
     console.log('Deleting the product');
-    res.json(product)})
+    res.status(200).json(product);
+  })
   .catch((err) => {
     res.status(500).json(err);
 });
