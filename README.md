@@ -27,9 +27,9 @@
 
   ## Screenshots & Additional Info
 
-  ![image](./public/assets/img/1.jpg)
-  ![image](./public/assets/img/2.jpg)
-  ![image](./public/assets/img/3.jpg)
+  ![image](./public/assets/img/1.png)
+  ![image](./public/assets/img/2.png)
+  ![image](./public/assets/img/3.png)
   
   The recording can be found: 
   The URL to the repo: https://github.com/hikod/ecommerce
