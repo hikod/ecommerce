@@ -12,10 +12,10 @@ router.get('/', (req, res) => {
   })
     .then((products) => {
       console.log('Getting the all products');
-      res.status(200).json(products); 
+      res.status(200).json(products);
     })
-    .catch((err) => { 
-      res.status(500).json(err); 
+    .catch((err) => {
+      res.status(500).json(err);
     })
 });
 
@@ -27,16 +27,16 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    include: [Category,Tag],
-    attributes: ['id', 'product_name', 'price', 'stock', 'category_id'] 
+    include: [Category, Tag],
+    attributes: ['id', 'product_name', 'price', 'stock', 'category_id']
   })
-  .then((product) => {
-    console.log('Getting the Product');
-    res.status(200).json(product);
-  })
-  .catch((err) => {
-    res.status(500).json(err);
-  });
+    .then((product) => {
+      console.log('Getting the Product');
+      res.status(200).json(product);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    });
 });
 
 // create new product
@@ -78,7 +78,9 @@ router.put('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-  })
+    individualHooks: true
+  }
+  )
     .then((product) => {
       // find all associated tags from ProductTag
       return ProductTag.findAll({ where: { product_id: req.params.id } });
@@ -120,13 +122,13 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then((product) => {
-    console.log('Deleting the product');
-    res.status(200).json(product);
-  })
-  .catch((err) => {
-    res.status(500).json(err);
-  })
+    .then((product) => {
+      console.log('Deleting the product');
+      res.status(200).json(product);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
+    })
 });
 
 module.exports = router;
