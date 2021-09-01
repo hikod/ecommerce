@@ -31,7 +31,7 @@
   ![image](./public/assets/img/2.png)
   ![image](./public/assets/img/3.png)
   
-  The recording can be found: 
+  The recording can be found: https://drive.google.com/file/d/1BjkmXh11pBhQEaVWBXwmQOjZRV-j5xGf/view?usp=sharing
   The URL to the repo: https://github.com/hikod/ecommerce
 
   ## Questions 
